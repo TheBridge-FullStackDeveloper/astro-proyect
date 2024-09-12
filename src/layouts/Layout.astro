@@ -1,0 +1,209 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import CodeEditor from '../components/CodeEditor.astro'
+import Modal  from '../components/Modal.astro'
+const currentPath = Astro.url.pathname;
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" transition:animate="slide">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+		
+	</head>
+	<body>
+		<div class="back-title">
+			{currentPath === "/" ? "" : <span class="btn-back"><svg xmlns="http://www.w3.org/2000/svg" width="5rem" height="5rem" viewBox="0 0 64 64" onclick="history.back()">
+				<path fill="#8c5dbb" d="M32 2C15.432 2 2 15.432 2 32c0 16.568 13.432 30 30 30s30-13.432 30-30C62 15.432 48.568 2 32 2m17 35.428H30.307V48L15 32l15.307-16v11.143H49z" />
+				</svg></span>}
+			<h1><span class="text-gradient"><a href="/">The Bridge</a></span></h1>
+		</div>
+		<slot />
+		<Modal>
+			<CodeEditor/>
+	  	</Modal>
+
+		<script src="../scripts/script.js"></script>
+	</body>
+</html>
+<style is:global>
+	:root {
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			rgb(var(--accent)),
+			rgb(var(--accent-light)) 30%,
+			white 60%
+		);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
+	}
+	.preCode {
+		position: relative;
+		background-color: #24292e;
+		padding: 1rem;
+		border-radius: 0.5rem;
+	}
+
+	code {
+		font-family: 'Consolas', 'Roboto', sans-serif;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	h4 {
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.back-title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 5rem;
+	}
+	.btn-back:hover {
+		cursor: pointer;
+	}
+
+	pre {
+		position: relative;
+	}
+	/* Estilo para el botón de copiar */
+	.copy-button {
+		position:absolute;
+		top: 0.5em;
+		right: 0.5em;
+		background: #24292e;
+		color: white;
+		border: none;
+		padding: 0.5em 1em;
+		cursor: pointer;
+		font-size: 0.8em;
+		transition: all 0.3s ease;
+		z-index: 10;
+	}
+
+	.copy-button svg {
+		vertical-align: middle;
+		margin-right: 0.5em;
+	}
+
+	.copy-button:hover {
+		background: rgba(0, 0, 0, 0.8);
+		border-radius: 5px;
+	}
+
+	/*Estilo para el boton de probar codigo */
+	.test-btn {
+		background: #13151a;
+		color: white;
+		border: none;
+		padding: 0.5em 1em;
+		cursor: pointer;
+		font-size: 0.8em;
+		transition: all 0.3s ease;
+		border-radius: 5px;
+		margin: 5px;
+		z-index: 10;
+	}
+	.test-btn:hover {
+		background: rgba(0, 0, 0, 0.8);
+	}
+	.open-modal {
+		display: block;
+		position: fixed;
+		inset-block-start: 0px;
+		inset-block-end: 0px;
+		max-width: calc(100% - 2em - 6px);
+		max-height: calc(100% - 2em - 6px);
+		user-select: text;
+		visibility: visible;
+		overflow: auto;
+		z-index: 999;
+	}
+	.renderedCodeBox {
+		background-color: #24292e;
+		width: 100%;
+		border-radius: 0.5rem;
+		border: none;
+		margin: 13px 0;
+	}
+
+	.language-javascript {
+		font-family: 'Consolas', 'Roboto', sans-serif;
+	}
+
+	.language-javascript:focus {
+		outline: none;
+	}
+	.modalButtons {
+		display: flex;
+		justify-content: space-between;
+	}
+	.executeCode {
+		padding: 0.25rem 1rem;
+		border-width: 1px;
+		border-radius: 3px;
+		border-color: #4dacff;
+		background-color: #4dacff;
+		font-family: 'Consolas', 'Roboto', sans-serif;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: calc(20 / 16);
+		letter-spacing: 0.005em;
+		color: #080c11
+	}
+
+	.executeCode:hover {
+		background-color: #92cbff;
+		border-color: #92cbff;
+		cursor: pointer;
+	}
+
+	.restoreCode {
+		padding: 0.25rem 1rem;
+		border-width: 1px;
+		border-radius: 3px;
+		border-color: #ff7a4d;
+		background-color: #ff7a4d;
+		font-family: 'Consolas', 'Roboto', sans-serif;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: calc(20 / 16);
+		letter-spacing: 0.005em;
+		color: #080c11
+	}
+
+	.restoreCode:hover {
+		background-color: #ffa292;
+		border-color: #ffa292;
+		cursor: pointer;
+	}
+	
+</style>

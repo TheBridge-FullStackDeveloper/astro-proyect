@@ -1,0 +1,47 @@
+---
+import Layout from './Layout.astro';
+
+type Props = {
+    title: string;
+};
+
+const { title } = Astro.props as Props;
+
+---
+<Layout title="The Bridge">
+    <main>
+        <article>
+            <div class="prose">
+                <div class="title">
+                    <h2>{title}</h2>
+                    <hr>
+                </div>
+                <slot /> <!-- Slot para contenido dinámico -->
+            </div>
+        </article>
+    </main>
+</Layout>
+
+<style>
+    main {
+        margin: auto;
+        padding: 1rem;
+        max-width: calc(100% - 2rem);
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .prose {
+        width: 1200px;
+        max-width: calc(100% - 2em);
+        margin: auto;
+        padding: 1em;
+        color: rgb(var(--gray-dark));
+    }
+    .title {
+        margin-bottom: 1em;
+        padding: 1em 0;
+        text-align: center;
+        line-height: 1;
+    }
+</style>

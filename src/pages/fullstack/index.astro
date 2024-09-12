@@ -1,0 +1,115 @@
+---
+import { getCollection, type ContentEntryMap } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import { collectionNames } from '../../content/config';
+
+const collections = await Promise.all(
+    collectionNames.map(async (collectionName) => {
+        // Hacemos una aserción de tipo explícita para que TypeScript entienda que es válido
+        return await getCollection(collectionName as keyof ContentEntryMap);
+    })
+);
+---
+
+<Layout title="The Bridge">
+    <main>
+        <section class="section">
+            <ul role="list" class="link-card-grid">
+                {
+                    collectionNames.map((collectionName) => (
+                        <Card
+                            href={`/fullstack/${collectionName}/`}
+                            title={collectionName.charAt(0).toUpperCase() + collectionName.slice(1)}
+                        />
+                    ))
+                }
+            </ul>
+        </section>
+    </main>
+</Layout>
+
+
+
+
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+	ul li * {
+		text-decoration: none;
+		transition: 0.2s ease;
+	}
+	ul li a {
+		display: block;
+	}
+	.title {
+		margin: 0;
+		color: rgb(var(--black));
+		line-height: 1;
+	}
+	.date {
+		margin: 0;
+		color: rgb(var(--gray));
+	}
+	ul li a:hover h4,
+	ul li a:hover .date {
+		color: rgb(var(--accent));
+	}
+	ul a:hover img {
+		box-shadow: var(--box-shadow);
+	}
+	@media (max-width: 720px) {
+		ul {
+			gap: 0.5em;
+		}
+		ul li {
+			width: 100%;
+			text-align: center;
+		}
+		ul li:first-child {
+			margin-bottom: 0;
+		}
+		ul li:first-child .title {
+			font-size: 1.563em;
+		}
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+	.section {
+		display: flex;
+	}
+</style>

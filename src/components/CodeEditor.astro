@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Try code - Page</title>
+    </head>
+    <body>
+        <div>
+            <div>
+                <div>
+                    <div>
+                        <div>
+                            <h4>Código:</h4>
+                            <pre id="preCode" class="preCode"><code id="codeBlock" class="language-javascript" contenteditable spellcheck="false"></code></pre>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Resultado:</h4>
+                        <iframe srcdoc="" id="renderedCodeBox" class="renderedCodeBox"></iframe>
+                    </div>
+                </div>
+                <div>
+                    <div class="modalButtons">
+                        <button class="executeCode" onclick="executeCode()">Probar codigo</button>
+                        <button class="restoreCode" onclick="restoreCode()">Reestablecer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script is:inline>
+
+            function executeCode() {
+                const codeBlock = document.getElementById('codeBlock');
+                const code = codeBlock.textContent;
+                const iframe = document.getElementById("renderedCodeBox");
+
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            
+                // Limpiar el contenido del iframe
+                iframeDoc.open();
+                iframeDoc.close();
+
+                // Crear una clase al iframe
+                iframeDoc.body.classList.add('renderedCodeBox');
+
+                // Crear un contenedor para los logs
+                const logContainer = iframeDoc.createElement('div');
+                logContainer.classList.add('logContainer');
+                iframeDoc.body.appendChild(logContainer);
+
+                // Sobrescribir console.log y console.error en el contexto del iframe
+                iframe.contentWindow.console.log = function(...args) {
+                    const logMessage = iframeDoc.createElement('div');
+                    logMessage.textContent = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg).join(' ');
+                    logContainer.appendChild(logMessage);
+                };
+
+                iframe.contentWindow.console.error = function(...args) {
+                    const errorMessage = iframeDoc.createElement('div');
+                    errorMessage.style.color = 'red'; // Estilo para errores
+                    errorMessage.textContent = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg).join(' ');
+                    logContainer.appendChild(errorMessage);
+                };
+
+
+                // Siempre crear y ejecutar un script para ejecutar el código dentro del iframe
+                const script = iframeDoc.createElement('script');
+                script.textContent = `
+                    (function() {
+                        try {
+                            ${code}
+                        } catch (error) {
+                            console.error('Error:', error.message);
+                        }
+                    })();
+                `;
+                iframeDoc.body.appendChild(script);
+            }
+
+            function restoreCode() {
+                const codeBlock = document.getElementById('codeBlock');
+                codeBlock.innerHTML = originalCode; // Restaura el código original
+            }
+        </script>
+    </body>
+</html>
