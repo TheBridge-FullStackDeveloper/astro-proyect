@@ -27,7 +27,7 @@ const posts = await getCollection(collection as keyof ContentEntryMap);
                 {
                     posts.map((post) => (
                         <Card
-                            href={`/fullstack/${post.collection}/${post.slug}/`}
+                            href={`${post.slug}/`}
                             title={post.data.title}
                         />
                     ))

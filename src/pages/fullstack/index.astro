@@ -19,7 +19,7 @@ const collections = await Promise.all(
                 {
                     collectionNames.map((collectionName) => (
                         <Card
-                            href={`/fullstack/${collectionName}/`}
+                            href={`${collectionName}/`}
                             title={collectionName.charAt(0).toUpperCase() + collectionName.slice(1)}
                         />
                     ))
