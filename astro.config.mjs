@@ -6,5 +6,5 @@ export default defineConfig({
     enabled: false
   },
   site: 'https://thebridge-fullstackdeveloper.github.io/astro-proyect/',
-  base: 'astro-proyect',
+  base: '/astro-proyect/',
 });
