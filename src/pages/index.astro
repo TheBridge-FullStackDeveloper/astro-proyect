@@ -3,13 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 
 const currentPath = Astro.url.pathname;
+console.log(currentPath)
 ---
 
 <Layout title="The Bridge">
 	<main>
 		<ul role="list" class="link-card-grid">
 			<Card
-				href=`${currentPath}fullstack/`
+				href=`${currentPath}/fullstack/`
 				title="Full Stack"
 			/>
 		</ul>
