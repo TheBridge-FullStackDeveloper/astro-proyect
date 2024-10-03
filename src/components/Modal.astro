@@ -43,29 +43,6 @@ const { closeText = 'Close' } = Astro.props
     ].filter((el) => !el.hasAttribute('disabled'))
   }
 
-  const trapFocus = (event: KeyboardEvent, modal: HTMLDialogElement) => {
-    const focusables = getKeyboardFocusableElements(modal)
-
-    // These will not be undefined as a modal always has at least one <button>
-    const firstFocusable = focusables[0]!
-    const lastFocusable = focusables[focusables.length - 1]!
-
-    if (document.activeElement === lastFocusable && event.key === 'Tab' && !event.shiftKey) {
-      event.preventDefault()
-      firstFocusable.focus()
-    }
-
-    if (document.activeElement === firstFocusable && event.key === 'Tab' && event.shiftKey) {
-      event.preventDefault()
-      lastFocusable.focus()
-    }
-  }
-
-  const openModal = (modal: HTMLDialogElement) => {
-    modal.showModal()
-    modal.dispatchEvent(new CustomEvent('modal-open', {bubbles: true }))
-  }
-
   const closeModal = () => {
     modals.forEach((modal) => {
       const modalId = modal.getAttribute('aria-labelledby')

@@ -34,6 +34,16 @@ obtenerDatosUsuario(10);
 La palabra clave `await` se usa dentro de funciones marcadas como `async` y pausa la ejecución de la función hasta que la promesa sea resuelta o rechazada. Esto evita el anidamiento excesivo de promesas y hace que el código sea más legible.
 
 ```javascript
+async function obtenerDatosUsuario(id) {
+  try {
+    let respuesta = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+    let datos = await respuesta.json();
+    return datos;
+  } catch (error) {
+    console.error('Error al obtener los datos del usuario:', error);
+    throw error;
+  }
+}
 async function imprimirUsuario(id) {
   try {
     let usuario = await obtenerDatosUsuario(id);

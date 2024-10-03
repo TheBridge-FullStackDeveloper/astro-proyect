@@ -24,7 +24,7 @@ localStorage.setItem('nombreUsuario', 'Juan Perez');
 
 // Recuperar datos de localStorage
 let nombreUsuario = localStorage.getItem('nombreUsuario');
-console.log(nombreUsuario); // Imprime: Juan Perez
+// Si imprimimos en consola nombreUsuario saldrá Juan Perez.
 
 // Borrar datos de localStorage
 localStorage.removeItem('nombreUsuario');
@@ -53,7 +53,7 @@ sessionStorage.setItem('sesionActiva', 'true');
 
 // Recuperar datos de sessionStorage
 let sesionActiva = sessionStorage.getItem('sesionActiva');
-console.log(sesionActiva); // Imprime: true
+//Si imprimimos en consola sesionActiva saldrá true
 
 // Borrar datos de sessionStorage
 sessionStorage.removeItem('sesionActiva');
