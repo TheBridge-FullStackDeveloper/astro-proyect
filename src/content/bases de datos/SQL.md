@@ -1,5 +1,5 @@
 ---
-title: Bases de Datos SQL
+title: SQL
 ---
 
 ## ¿Qué es SQL?
