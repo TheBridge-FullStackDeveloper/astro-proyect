@@ -6,13 +6,13 @@ Los elementos semánticos de HTML son aquellos que describen claramente su prop�
 
 ## Ejemplos de elementos semánticos
 
-1. ***`<header>`***: Define el encabezado de una sección o página.
-2. ***`<nav>`***: Representa una sección de navegación.
-3. ***`<article>`***: Contiene contenido independiente que puede ser distribuido de forma aislada.
-4. ***`<section>`***: Representa una sección genérica de contenido.
-5. ***`<footer>`***: Define el pie de página de una sección o documento.
-6. ***`<aside>`***: Contenido relacionado lateralmente con el contenido principal.
-7. ***`<main>`***: Indica el contenido principal de la página.
+1. `<header>`: Define el encabezado de una sección o página.
+2. `<nav>`: Representa una sección de navegación.
+3. `<article>`: Contiene contenido independiente que puede ser distribuido de forma aislada.
+4. `<section>`: Representa una sección genérica de contenido.
+5. `<footer>`: Define el pie de página de una sección o documento.
+6. `<aside>`: Contenido relacionado lateralmente con el contenido principal.
+7. `<main>`: Indica el contenido principal de la página.
 
 ```html
 <header>

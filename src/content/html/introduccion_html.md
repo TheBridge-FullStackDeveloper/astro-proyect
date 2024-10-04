@@ -26,12 +26,12 @@ Un archivo HTML tiene una estructura básica que sigue el siguiente formato:
 
 ### Descripción de las etiquetas principales
 
-1. ***`<!DOCTYPE html>`***: Indica al navegador que estamos utilizando HTML5.
-2. ***`<html>`***: La etiqueta raíz que envuelve todo el contenido del documento HTML.
-3. ***`<head>`***: Contiene información meta sobre el documento, como el conjunto de caracteres, el título de la página y enlaces a hojas de estilo o scripts.
-4. ***`<meta charset="UTF-8">`***: Establece el conjunto de caracteres para la página, garantizando que se muestren correctamente los símbolos y caracteres especiales.
-5. ***`<title>`***: Define el título que aparecerá en la pestaña del navegador.
-6. ***`<body>`***: Contiene todo el contenido visible de la página, como texto, imágenes y otros elementos.
+1. `<!DOCTYPE html>`: Indica al navegador que estamos utilizando HTML5.
+2. `<html>`: La etiqueta raíz que envuelve todo el contenido del documento HTML.
+3. `<head>`: Contiene información meta sobre el documento, como el conjunto de caracteres, el título de la página y enlaces a hojas de estilo o scripts.
+4. `<meta charset="UTF-8">`: Establece el conjunto de caracteres para la página, garantizando que se muestren correctamente los símbolos y caracteres especiales.
+5. `<title>`: Define el título que aparecerá en la pestaña del navegador.
+6. `<body>`: Contiene todo el contenido visible de la página, como texto, imágenes y otros elementos.
 
 ## Etiquetas comunes en HTML
 

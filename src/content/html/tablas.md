@@ -32,17 +32,17 @@ Las tablas en HTML permiten organizar datos en filas y columnas. Se utilizan en 
 
 ### Descripción de las etiquetas principales
 
-- ***`<table>`***: Define el contenedor de la tabla.
-- ***`<thead>`***: Define el encabezado de la tabla.
-- ***`<tr>`***: Representa una fila.
-- ***`<th>`***: Define una celda de encabezado.
-- ***`<td>`***: Define una celda de datos.
-- ***`<tbody>`***: Contiene las filas del cuerpo principal de la tabla.
+- `<table>`: Define el contenedor de la tabla.
+- `<thead>`: Define el encabezado de la tabla.
+- `<tr>`: Representa una fila.
+- `<th>`: Define una celda de encabezado.
+- `<td>`: Define una celda de datos.
+- `<tbody>`: Contiene las filas del cuerpo principal de la tabla.
 
 ## Combinar celdas
 
-- ***rowspan***: Combina celdas en una columna.
-- ***colspan***: Combina celdas en una fila.
+- rowspan: Combina celdas en una columna.
+- colspan: Combina celdas en una fila.
 
 ```html
 <td colspan="2">Esta celda abarca dos columnas</td>
