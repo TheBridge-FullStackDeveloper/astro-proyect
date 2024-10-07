@@ -13,7 +13,6 @@ const collections = await Promise.all(
 ---
 
 <Layout title="The Bridge">
-    <main>
         <section class="section">
             <ul role="list" class="link-card-grid">
                 {
@@ -26,22 +25,9 @@ const collections = await Promise.all(
                 }
             </ul>
         </section>
-    </main>
 </Layout>
 
-
-
-
-
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
 	ul {
 		display: flex;
 		flex-wrap: wrap;
@@ -88,13 +74,6 @@ const collections = await Promise.all(
 		ul li:first-child .title {
 			font-size: 1.563em;
 		}
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);

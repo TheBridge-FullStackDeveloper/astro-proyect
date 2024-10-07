@@ -32,14 +32,16 @@ const { title } = Astro.props;
 		<div class="back-title">
 			{isRoot ? "" : (
 				<span class="btn-back">
-				<svg xmlns="http://www.w3.org/2000/svg" width="5rem" height="5rem" viewBox="0 0 64 64" onclick="history.back()">
-					<path fill="#8c5dbb" d="M32 2C15.432 2 2 15.432 2 32c0 16.568 13.432 30 30 30s30-13.432 30-30C62 15.432 48.568 2 32 2m17 35.428H30.307V48L15 32l15.307-16v11.143H49z" />
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" onclick="history.back()">
+					<path fill="#EF3340" d="M32 2C15.432 2 2 15.432 2 32c0 16.568 13.432 30 30 30s30-13.432 30-30C62 15.432 48.568 2 32 2m17 35.428H30.307V48L15 32l15.307-16v11.143H49z" />
 				</svg>
 				</span>
 		  	)}
-			<h1><span class="text-gradient"><a href="/astro-proyect/">The Bridge</a></span></h1>
+			<span class="logo"><a href="/astro-proyect/"><img src="../../public/images/logo_TB_horiz_negativo-01.png"></a></span>
 		</div>
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<Modal>
 			<CodeEditor/>
 	  	</Modal>
@@ -47,13 +49,13 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
+		--accent: 255, 255, 255;
+		--accent-light: 239, 51, 64;
+		--accent-dark: 0, 0, 0;
 		--accent-gradient: linear-gradient(
 			45deg,
+			rgb(var(--accent-light)),
 			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
 			white 60%
 		);
 	}
@@ -62,17 +64,22 @@ const { title } = Astro.props;
 		background: #13151a;
 		background-size: 224px;
 	}
+	main {
+		width: 1200px;
+    	max-width: calc(100% - 2em);
+		margin: auto;
+		padding: 1rem;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
 	.preCode {
 		position: relative;
 		background-color: #24292e;
 		padding: 1rem;
 		border-radius: 0.5rem;
 	}
-
-	pre {
-		font-size: 1rem;
-	}
-
 	code {
 		font-family: 'Consolas', 'Roboto', sans-serif;
 		background-color: #24292e;
@@ -80,34 +87,49 @@ const { title } = Astro.props;
   		border-radius: 4px;
 	}
 	h1 {
-		font-size: 4rem;
+		color: #EF3340;
+		font-size: 3rem;
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
-		margin-bottom: 1em;
+		margin: 0px 0px 1em 0px;
 	}
 	h4 {
 		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
 	}
 	.back-title {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		gap: 5rem;
+		margin: 1em;
+	}
+	.btn-back {
+		width: 4rem;
+	}
+	.btn-back svg {
+		max-width: 100%;
 	}
 	.btn-back:hover {
 		cursor: pointer;
 	}
-
 	pre {
 		position: relative;
+		font-size: 1rem;
+		padding: 5px
+	}
+	.logo {
+		width: 30rem;
+	}
+	.logo img {
+		max-width: 100%;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
 	}
 	/* Estilo para el botón de copiar */
 	.copy-button {
@@ -220,5 +242,11 @@ const { title } = Astro.props;
 		border-color: #ffa292;
 		cursor: pointer;
 	}
+
+	/*@media (max-width: 720px) {
+		.logo {
+			max-width: 200px;
+		}
+	}*/
 	
 </style>

@@ -20,36 +20,23 @@ const posts = await getCollection(collection as keyof ContentEntryMap);
 ---
 
 <Layout title="The Bridge">
-    <main>
-        <section class="section">
-            <h1>{collection.charAt(0).toUpperCase() + collection.slice(1)}</h1>
-            <ul role="list" class="link-card-grid">
-                {
-                    posts.map((post) => (
-                        <Card
-                            href={`${post.slug}/`}
-                            title={post.data.title}
-                        />
-                    ))
-                }
-            </ul>
-        </section>
-    </main>
+    <section class="section">
+        <h1>{collection.charAt(0).toUpperCase() + collection.slice(1)}</h1>
+        <ul role="list" class="link-card-grid">
+            {
+                posts.map((post) => (
+                    <Card
+                        href={`${post.slug}/`}
+                        title={post.data.title}
+                    />
+                ))
+            }
+        </ul>
+    </section>
 </Layout>
 
 <style>
-    main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-    h1 {
-        color: white;
-    }
+
     li {
         list-style: none;
     }

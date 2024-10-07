@@ -10,26 +10,15 @@ if (currentPath !== '/' && currentPath.endsWith('/')) {
 ---
 
 <Layout title="The Bridge">
-	<main>
 		<ul role="list" class="link-card-grid">
 			<Card
 				href=`${currentPath}/fullstack/`
 				title="Full Stack"
 			/>
 		</ul>
-	</main>
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
 	.astro-a {
 		position: absolute;
 		top: -32px;
@@ -38,13 +27,6 @@ if (currentPath !== '/' && currentPath.endsWith('/')) {
 		width: 220px;
 		height: auto;
 		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
 	}
 	.text-gradient {
 		background-image: var(--accent-gradient);
