@@ -73,12 +73,15 @@ const { title } = Astro.props;
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
+		word-wrap: break-word;
 	}
 	.preCode {
 		position: relative;
 		background-color: #24292e;
 		padding: 1rem;
 		border-radius: 0.5rem;
+		white-space: pre-wrap;
+    	word-wrap: break-word;
 	}
 	code {
 		font-family: 'Consolas', 'Roboto', sans-serif;
@@ -116,7 +119,9 @@ const { title } = Astro.props;
 	pre {
 		position: relative;
 		font-size: 1rem;
-		padding: 5px
+		padding: 5px;
+		white-space: pre-wrap;
+    	word-wrap: break-word;
 	}
 	.logo {
 		width: 30rem;
