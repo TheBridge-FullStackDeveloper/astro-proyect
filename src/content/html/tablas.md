@@ -1,5 +1,8 @@
 ---
 title: Tablas en HTML
+description: "esta es la descripcion a tablas en HTML"
+pubDate: '01/12/2024'
+collection: html
 ---
 
 Las tablas en HTML permiten organizar datos en filas y columnas. Se utilizan en casos donde se necesita presentar información tabular como estadísticas, datos financieros, entre otros.

@@ -10,12 +10,33 @@ if (currentPath !== '/' && currentPath.endsWith('/')) {
 ---
 
 <Layout title="The Bridge">
-		<ul role="list" class="link-card-grid">
-			<Card
-				href=`${currentPath}/fullstack/`
-				title="Full Stack"
-			/>
-		</ul>
+	<section>
+		<div class="pageTitle">
+			<h1>FullStack Developer</h1> 
+			<img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo">
+		</div>
+		<p>Un FullStack Developer es un desarrollador que posee habilidades tanto en el frontend como en el backend de una aplicación o sitio web. 
+			Esto significa que es capaz de construir aplicaciones completas, abarcando desde la interfaz de usuario hasta la lógica del servidor y 
+			la gestión de bases de datos.</p>
+			<ul role="list" class="link-card-grid">
+				<Card
+					href=`${currentPath}/fundamentals/`
+					title="Fundamentals"
+					description="Descripción de fundamentals"
+				/>
+				<Card
+					href=`${currentPath}/backend/`
+					title="Backend"
+					description="Descripción del BackEnd"
+				/>
+				<Card
+					href=`${currentPath}/frontend/`
+					title="Frontend"
+					description="Descripcion del FrontEnd"
+				/>
+
+			</ul>
+	</section>
 </Layout>
 
 <style>
@@ -34,11 +55,5 @@ if (currentPath !== '/' && currentPath.endsWith('/')) {
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
 	}
 </style>

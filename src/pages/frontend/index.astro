@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+let currentPath = Astro.url.pathname;
+---
+
+<Layout title="The Bridge">
+	<div class="pageTitle">
+		<h1>Frontend</h1>
+		<img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo">
+	</div>
+	<ul role="list" class="link-card-grid">
+		<Card
+			href=`${currentPath}react/`
+			title="React"
+			description="Descripción de react"
+		/>
+	</ul>
+</Layout>

@@ -1,5 +1,8 @@
 ---
-title: Introduccion a HTML
+title: Introducción a HTML
+description: "esta es la descripcion a HTML"
+pubDate: '01/01/2024'
+collection: html
 ---
 
 HTML (HyperText Markup Language) es el lenguaje estándar para crear sitios web. Proporciona la estructura básica del contenido que se muestra en el navegador, permitiendo definir textos, imágenes, enlaces, tablas, formularios, entre otros elementos visuales.

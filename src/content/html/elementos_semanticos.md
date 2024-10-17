@@ -1,5 +1,8 @@
 ---
 title: Elementos semánticos en HTML
+description: "esta es la descripcion a elementos semánticos en HTML"
+pubDate: '01/02/2024'
+collection: html
 ---
 
 Los elementos semánticos de HTML son aquellos que describen claramente su propósito tanto para el navegador como para el desarrollador. Estos elementos mejoran la accesibilidad y el SEO de las páginas web.

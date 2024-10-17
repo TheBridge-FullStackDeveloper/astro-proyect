@@ -9,12 +9,13 @@ const { closeText = 'Close' } = Astro.props
 
 <dialog class="modal">
   <div class="modal__inner">
+    <div class="modal__close">
+      <button><img src="/astro-proyect/images/x_icon.svg"></button>
+    </div>
     <div class="modal__content">
       <slot>Modal description.</slot>
     </div>
-    <div class="modal__close">
-      <button>{closeText}</button>
-    </div>
+
   </div>
 </dialog>
 
@@ -35,13 +36,13 @@ const { closeText = 'Close' } = Astro.props
   let trapFocusController: AbortController | undefined
   let keydownController: AbortController | undefined
 
-  const getKeyboardFocusableElements = (element: HTMLElement) => {
+  /*const getKeyboardFocusableElements = (element: HTMLElement) => {
     return [
       ...element.querySelectorAll<FocusableElement>(
         'a, button, input, textarea, select, details,[tabindex]:not([tabindex="-1"])'
       ),
     ].filter((el) => !el.hasAttribute('disabled'))
-  }
+  }*/
 
   const closeModal = () => {
     modals.forEach((modal) => {
@@ -85,7 +86,7 @@ const { closeText = 'Close' } = Astro.props
     color: black;
     background-color: white;
     border: 0.5rem solid black;
-    border-radius: 1rem;
+    border-radius: 8px;
     padding: 0;
   }
   .modal {
@@ -99,36 +100,22 @@ const { closeText = 'Close' } = Astro.props
 
   .modal__content {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 2rem;
+    padding: 0 1rem 1rem;
     background-color: #13151a;
     color: white
   }
 
   .modal__close {
-    width: 100%;
+    background-color: #13151a;
+    text-align: end;
   }
 
   .modal__close button {
+    background-color: #13151a;
     border: none;
-    background-color: lightgrey;
-    border-bottom-left-radius: 0.4rem;
-    border-bottom-right-radius: 0.4rem;
-    color: black;
-    text-align: right;
-    transition: background-color 0.15s ease-in-out;
-    width: 100%;
-    margin: 0;
-    padding: 0.5rem;
-    background-color: rgb(150, 150, 148);
-    font-family: 'Consolas', 'Roboto', sans-serif;
-    font-size: 1rem;
   }
 
-  .modal__close button:hover,
-  .modal__close button:focus {
+  .modal__close button:hover {
     background-color: grey;
     cursor: pointer;
     text-decoration: underline;

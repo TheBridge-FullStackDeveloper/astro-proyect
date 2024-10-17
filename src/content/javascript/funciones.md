@@ -1,7 +1,9 @@
 ---
 title: Funciones
+description: "esta es la descripcion de funciones"
+pubDate: '01/03/2024'
+collection: javascript
 ---
-
 
 En programación, una función es un bloque de código que realiza una tarea específica o calcula un valor. Las funciones permiten encapsular la lógica en un bloque reutilizable, lo que facilita la organización y el mantenimiento del código. Una función se define con la palabra clave function, seguida de un nombre, una lista de parámetros encerrados entre paréntesis y un bloque de código encerrado entre llaves.
 

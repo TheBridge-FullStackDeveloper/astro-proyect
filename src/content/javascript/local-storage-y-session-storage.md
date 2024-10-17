@@ -1,5 +1,8 @@
 ---
 title: 'Almacenamiento Web: Local Storage y Session Storage'
+description: "esta es la descripcion de local storage y session storage"
+pubDate: '01/03/2024'
+collection: javascript
 ---
 
 En el desarrollo web moderno, el manejo eficiente de los datos del usuario es crucial para mejorar la experiencia de navegación. Dos herramientas clave que los desarrolladores utilizan para este propósito son **Local Storage** y **Session Storage**. Ambas forman parte de la API de almacenamiento web y permiten almacenar datos en el navegador del usuario en formato clave-valor. Sin embargo, difieren significativamente en su ciclo de vida y uso adecuado.

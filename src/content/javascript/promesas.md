@@ -1,8 +1,9 @@
 ---
-title: Promesas
+title: Promesas en Javascript
+description: "esta es la descripcion de promesas"
+pubDate: '01/03/2024'
+collection: javascript
 ---
-
-## Promesas en JavaScript
 
 Las promesas son objetos utilizados para la programación asíncrona en JavaScript. Una promesa representa un valor que puede estar disponible ahora, en el futuro o nunca. Proporcionan una manera más limpia y robusta de manejar el código asíncrono en comparación con los callbacks.
 

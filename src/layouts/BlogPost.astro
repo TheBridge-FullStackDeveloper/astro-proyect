@@ -2,7 +2,7 @@
 import Layout from './Layout.astro';
 
 type Props = {
-    title: string;
+    title: string;    
 };
 
 const { title } = Astro.props as Props;
@@ -11,9 +11,9 @@ const { title } = Astro.props as Props;
 <Layout title="The Bridge">
         <article>
             <div class="prose">
-                <div class="title">
-                    <h2>{title}</h2>
-                    <hr>
+                <div class="title pageTitle">
+                    <h1>{title}</h1>
+                    <img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo">
                 </div>
                 <slot /> <!-- Slot para contenido dinámico -->
             </div>

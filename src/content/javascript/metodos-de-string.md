@@ -1,5 +1,8 @@
 ---
 title: Métodos de string
+description: "esta es la descripcion de metodos de string"
+pubDate: '01/03/2024'
+collection: javascript
 ---
 
 Trabajar con cadenas de texto es una tarea común en el desarrollo de software, y JavaScript ofrece una variedad de métodos útiles para manipular y gestionar cadenas. A continuación, se presentan algunos de los métodos más importantes con una descripción detallada y ejemplos de uso.

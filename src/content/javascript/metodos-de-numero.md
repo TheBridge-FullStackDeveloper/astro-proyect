@@ -1,5 +1,8 @@
 ---
 title: Métodos de número
+description: "esta es la descripcion de métodos de número"
+pubDate: '01/03/2024'
+collection: javascript
 ---
 
 JavaScript proporciona varios métodos para trabajar con números, lo que facilita realizar operaciones matemáticas, validar valores numéricos y formatear números. A continuación, se presentan algunos de estos métodos esenciales con una descripción ampliada y ejemplos de uso.

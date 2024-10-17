@@ -1,6 +1,8 @@
 ---
 title: MongoDB
-
+description: "esta es la descripcion de MongoDB"
+pubDate: '01/03/2024'
+collection: nodejs
 ---
 
 ## Introducción
@@ -31,7 +33,7 @@ sudo apt install -y mongodb
 
 ### Instalación en Windows
 
-1. Descarga el instalador desde [MongoDB Download Center](https://www.mongodb.com/try/download/community).
+1. Descarga el instalador desde <a href="https://www.mongodb.com/try/download/community" target="_blank">MongoDB Download Center</a>.
 2. Ejecuta el instalador y sigue las instrucciones.
 
 ## Estructura de Datos
@@ -110,4 +112,4 @@ MongoDB es una poderosa herramienta para el manejo de grandes volúmenes de dato
 
 ## Recursos Adicionales
 
-* [Documentación Oficial de MongoDB](https://www.mongodb.com/docs/)
+* <a href="https://www.mongodb.com/docs/" target="_blank">Documentación Oficial de MongoDB</a>

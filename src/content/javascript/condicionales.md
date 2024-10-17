@@ -1,5 +1,8 @@
 ---
 title: Condicionales
+description: "esta es la descripcion de condicionales"
+pubDate: '01/03/2024'
+collection: javascript
 ---
 
 Las estructuras condicionales en JavaScript permiten controlar el flujo de ejecución del programa basándose en ciertas condiciones. Los condicionales se utilizan para ejecutar un bloque de código si una condición es verdadera (true) o para ejecutar un bloque de código alternativo si la condición es falsa (false).

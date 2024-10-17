@@ -1,5 +1,8 @@
 ---
 title: Async-await
+description: "esta es la descripcion de async await"
+pubDate: '01/03/2024'
+collection: javascript
 ---
 
 ## Uso de async y await en JavaScript

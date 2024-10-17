@@ -7,21 +7,19 @@
     </head>
     <body>
         <div>
-            <div>
+            <div class="modal_code_result">
                 <div>
                     <h4>Código:</h4>
                     <pre id="preCode" class="preCode"><code id="codeBlock" class="language-javascript" contenteditable spellcheck="false"></code></pre>
                 </div>
 
-                <div>
+                <div class="modal_result">
                     <h4>Resultado:</h4>
                     <iframe srcdoc="" id="renderedCodeBox" class="renderedCodeBox"></iframe>
-                </div>
-            </div>
-            <div>
-                <div class="modalButtons">
-                    <button class="executeCode" onclick="executeCode()">Probar codigo</button>
-                    <button class="restoreCode" onclick="restoreCode()">Reestablecer</button>
+                    <div class="modal_buttons">
+                        <button class="executeCode" onclick="executeCode()">Probar código</button>
+                        <button class="restoreCode" onclick="restoreCode()">Reestablecer código</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -120,10 +118,11 @@
                     // Insertar el botón dentro del bloque de código <pre>
                     block.appendChild(button);
 
-                    //Botones de probar codigo solo si aparece el console.log o <script>
+                    //Botones de probar codigo solo si aparece el console.log y no tiene un elemento anterior con no-try-code
                     let codeElement = block.querySelector('code');
+                    let noTryCode = block.previousElementSibling;
 
-                    if (codeElement && codeElement.innerText.includes('console.log')) {
+                    if (codeElement && codeElement.innerText.includes('console.log') && !noTryCode.innerText.includes('//no-try-code')) {
                         let testButton = document.createElement('button');
                         testButton.className = 'test-btn';
                         testButton.id = 'test-btn';
@@ -136,6 +135,7 @@
                             document.getElementById('codeBlock').innerText = code;
                             originalCode = code;
                             document.querySelector('.modal').showModal();
+
                             //Dar estilo a la salida del console.log del bloque de codigo.
                             document.getElementById("renderedCodeBox").addEventListener("load", function() {
                                 var iframeDocument = this.contentDocument || this.contentWindow.document; 
@@ -148,6 +148,7 @@
 
                         block.appendChild(testButton);
                     }
+                    noTryCode.innerText = noTryCode.innerText.replace('//no-try-code', '');
                 });
             }
   
@@ -156,7 +157,7 @@
 
                 // Escuchar el evento astro:after-swap para navegación SPA
                 document.addEventListener('astro:after-swap', function () {
-                    addCopyButtons();
+                        addCopyButtons();              
                 });
             });
         </script>

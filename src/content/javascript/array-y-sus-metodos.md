@@ -1,5 +1,8 @@
 ---
 title: Array y sus métodos
+description: "esta es la descripcion de array y sus metodos"
+pubDate: '01/03/2024'
+collection: javascript
 ---
 
 Un array en JavaScript es una estructura de datos utilizada para almacenar una colección de elementos. Estos elementos pueden ser de cualquier tipo de datos, como números, cadenas, objetos u otros arrays. Los arrays en JavaScript son dinámicos, lo que significa que pueden cambiar de tamaño y pueden contener elementos de diferentes tipos. Los elementos en un array están indexados numéricamente y el índice comienza desde 0.

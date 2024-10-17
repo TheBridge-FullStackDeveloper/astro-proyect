@@ -1,5 +1,8 @@
 ---
 title: Variables
+description: "esta es la descripcion de variables"
+pubDate: '01/03/2024'
+collection: javascript
 ---
 
 Una variable es un contenedor para almacenar datos que pueden cambiar durante la ejecución de un programa. Las variables se utilizan para almacenar valores como números, texto, objetos, etc..., y se pueden manipular y utilizar en diversas operaciones dentro de un programa.

@@ -1,0 +1,29 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Card from "../../../components/Card.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection('bases_de_datos')).sort(
+    (a, b) => a.data.pubDate.localeCompare(b.data.pubDate)
+);
+---
+
+<Layout title="The Bridge">
+    <section>
+        <div class="pageTitle">
+            <h1>Bases de datos</h1>
+            <img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo">
+        </div>
+        <ul role="list" class="link-card-grid">
+            {
+                posts.map((post) => (
+                    <Card 
+                        href={`${post.slug}/`}
+                        title={`${post.data.title}`}
+                        description={`${post.data.description}`}
+                    />
+                ))
+            }
+        </ul>
+    </section>
+</Layout>

@@ -1,8 +1,13 @@
 ---
 title: Bucles
+description: "esta es la descripcion de Bucles"
+pubDate: '01/03/2024'
+collection: javascript
 ---
 
-Los bucles en programación permiten ejecutar un bloque de código repetidamente hasta que se cumple cierta condición. Los bucles son esenciales para realizar tareas repetitivas y procesar datos en una colección de elementos.
+Los bucles en JavaScript permiten ejecutar repetidamente un bloque de código mientras se cumpla una condición específica o durante un número definido de veces. Son una herramienta fundamental para realizar tareas repetitivas de manera eficiente
+
+<hr>  
 
 En JavaScript, hay varios tipos de bucles, pero los más comunes son:
 

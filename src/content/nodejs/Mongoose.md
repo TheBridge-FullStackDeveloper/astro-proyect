@@ -1,6 +1,8 @@
 ---
 title: Mongoose
-
+description: "esta es la descripcion de mongoose"
+pubDate: '01/03/2024'
+collection: nodejs
 ---
 
 ## ¿Qué es Mongoose?
@@ -28,6 +30,7 @@ npm install mongoose
 
 Para conectarte a una base de datos MongoDB, utiliza el siguiente código:
 
+//no-try-code
 ```javascript
 const mongoose = require('mongoose');
 
@@ -57,6 +60,7 @@ const Usuario = mongoose.model('Usuario', esquemaUsuario);
 
 ### Crear un Documento
 
+//no-try-code
 ```javascript
 const nuevoUsuario = new Usuario({
     nombre: 'Juan',
@@ -71,6 +75,7 @@ nuevoUsuario.save()
 
 ### Leer Documentos
 
+//no-try-code
 ```javascript
 Usuario.find()
     .then(usuarios => console.log(usuarios))
@@ -79,6 +84,7 @@ Usuario.find()
 
 ### Actualizar un Documento
 
+//no-try-code
 ```javascript
 Usuario.updateOne({ email: 'juan@example.com' }, { edad: 31 })
     .then(() => console.log('Usuario actualizado'))
@@ -87,6 +93,7 @@ Usuario.updateOne({ email: 'juan@example.com' }, { edad: 31 })
 
 ### Eliminar un Documento
 
+//no-try-code
 ```javascript
 Usuario.deleteOne({ email: 'juan@example.com' })
     .then(() => console.log('Usuario eliminado'))
@@ -101,6 +108,7 @@ Estos métodos se utilizan en instancias individuales de documentos. Algunos de 
 
 * `save()`: Guarda el documento en la base de datos. Si el documento ya existe, se actualizará. Si no, se creará uno nuevo.
 
+//no-try-code
 ```javascript
 const usuario = new Usuario({ nombre: 'Juan' });
 usuario.save()
@@ -110,6 +118,7 @@ usuario.save()
 
 * `remove()`: Elimina el documento actual de la base de datos.
 
+//no-try-code
 ```javascript
 usuario.remove()
     .then(() => console.log('Usuario eliminado'))
@@ -118,6 +127,7 @@ usuario.remove()
 
 * `update()`: Actualiza los campos del documento actual.
 
+//no-try-code
 ```javascript
 usuario.update({ edad: 31 })
     .then(() => console.log('Usuario actualizado'))
@@ -130,6 +140,7 @@ Estos métodos se utilizan en el modelo y afectan a múltiples documentos. Aquí
 
 * `create()`: Crea y guarda uno o más documentos en la base de datos.
 
+//no-try-code
 ```javascript
 Usuario.create([{ nombre: 'Ana' }, { nombre: 'Luis' }])
     .then(() => console.log('Usuarios creados'))
@@ -138,6 +149,7 @@ Usuario.create([{ nombre: 'Ana' }, { nombre: 'Luis' }])
 
 * `find()`: Busca documentos que coincidan con los criterios dados.
 
+//no-try-code
 ```javascript
 Usuario.find({ nombre: 'Juan' })
     .then(usuarios => console.log(usuarios))
@@ -146,6 +158,7 @@ Usuario.find({ nombre: 'Juan' })
 
 * `findOne()`: Busca el primer documento que coincida con los criterios dados.
 
+//no-try-code
 ```javascript
 Usuario.findOne({ email: 'juan@example.com' })
     .then(usuario => console.log(usuario))
@@ -154,6 +167,7 @@ Usuario.findOne({ email: 'juan@example.com' })
 
 * `updateOne()`: Actualiza el primer documento que coincide con los criterios dados.
 
+//no-try-code
 ```javascript
 Usuario.updateOne({ nombre: 'Juan' }, { edad: 31 })
     .then(() => console.log('Usuario actualizado'))
@@ -162,6 +176,7 @@ Usuario.updateOne({ nombre: 'Juan' }, { edad: 31 })
 
 * `deleteOne()`: Elimina el primer documento que coincide con los criterios dados.
 
+//no-try-code
 ```javascript
 Usuario.deleteOne({ nombre: 'Juan' })
     .then(() => console.log('Usuario eliminado'))
@@ -174,6 +189,7 @@ Mongoose proporciona un conjunto robusto de métodos de consulta que permiten re
 
 * `sort()`: Ordena los resultados de la consulta.
 
+//no-try-code
 ```javascript
 Usuario.find().sort({ edad: -1 }) // Ordenar por edad descendente
     .then(usuarios => console.log(usuarios))
@@ -182,6 +198,7 @@ Usuario.find().sort({ edad: -1 }) // Ordenar por edad descendente
 
 * `limit()`: Limita el número de documentos devueltos.
 
+//no-try-code
 ```javascript
 Usuario.find().limit(5)
     .then(usuarios => console.log(usuarios))
@@ -190,6 +207,7 @@ Usuario.find().limit(5)
 
 * `skip()`: Omite un número específico de documentos en el resultado.
 
+//no-try-code
 ```javascript
 Usuario.find().skip(10).limit(5) // Salta los primeros 10
     .then(usuarios => console.log(usuarios))
@@ -198,6 +216,7 @@ Usuario.find().skip(10).limit(5) // Salta los primeros 10
 
 * `countDocuments()`: Devuelve el número de documentos que coinciden con la consulta.
 
+//no-try-code
 ```javascript
 Usuario.countDocuments({ edad: { $gte: 18 } })
     .then(count => console.log(`Hay ${count} usuarios mayores de 18`))
@@ -206,6 +225,7 @@ Usuario.countDocuments({ edad: { $gte: 18 } })
 
 * `aggregate()`: Permite realizar operaciones de agregación en los documentos.
 
+//no-try-code
 ```javascript
 Usuario.aggregate([
     { $group: { _id: "$edad", total: { $sum: 1 } } } // Agrupar por edad
@@ -220,6 +240,7 @@ Mongoose permite utilizar middleware para realizar acciones antes o después de 
 
 * `pre`: Se ejecuta antes de una operación (por ejemplo, `save`, `remove`).
 
+//no-try-code
 ```javascript
 esquemaUsuario.pre('save', function(next) {
     console.log('Antes de guardar el usuario');
@@ -229,6 +250,7 @@ esquemaUsuario.pre('save', function(next) {
 
 * `post`: Se ejecuta después de una operación.
 
+//no-try-code
 ```javascript
 esquemaUsuario.post('save', function(doc) {
     console.log(`Usuario guardado: ${doc}`);
@@ -241,4 +263,4 @@ Mongoose ofrece una amplia variedad de métodos para trabajar con datos en Mongo
 
 ## Recursos Adicionales
 
-* [Documentación oficial de Mongoose](https://mongoosejs.com/docs/guide.html)
+* <a href="https://mongoosejs.com/docs/guide.html" target="_blank">Documentación oficial de Mongoose</a>

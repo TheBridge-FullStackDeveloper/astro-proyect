@@ -1,5 +1,8 @@
 ---
 title: addEventListener
+description: "esta es la descripcion de addeventlistener"
+pubDate: '01/03/2024'
+collection: javascript
 ---
 
 El método *addEventListener* en JavaScript se utiliza para asociar un evento a un elemento específico del DOM (Document Object Model). Este método permite que una función (llamada "event listener" o "manejador de eventos") sea ejecutada cada vez que ocurre un evento particular en ese elemento.

@@ -1,5 +1,8 @@
 ---
 title: Destructuring y Spread Operator
+description: "esta es la descripcion de destructuring"
+pubDate: '01/03/2024'
+collection: javascript
 ---
 
 ## Destructuring (Desestructuración)

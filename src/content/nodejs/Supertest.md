@@ -1,11 +1,13 @@
 ---
 title: Supertest
-
+description: "esta es la descripcion de Supertest"
+pubDate: '01/03/2024'
+collection: nodejs
 ---
 
 ## ¿Qué es Supertest?
 
-[Supertest](https://github.com/visionmedia/supertest) es una biblioteca para realizar pruebas de servidores HTTP en Node.js. Se utiliza comúnmente junto con frameworks de prueba como **Jest** o **Mocha**. Supertest permite realizar solicitudes HTTP y hacer afirmaciones sobre las respuestas, facilitando la prueba de las API de manera sencilla y efectiva.
+<a href="https://github.com/visionmedia/supertest" target="_blank">Supertest</a> es una biblioteca para realizar pruebas de servidores HTTP en Node.js. Se utiliza comúnmente junto con frameworks de prueba como **Jest** o **Mocha**. Supertest permite realizar solicitudes HTTP y hacer afirmaciones sobre las respuestas, facilitando la prueba de las API de manera sencilla y efectiva.
 
 ## Características Principales
 
@@ -44,6 +46,7 @@ module.exports = app;
 
 Luego, puedes iniciar el servidor en otro archivo (por ejemplo, `index.js`):
 
+//no-try-code
 ```javascript
 // index.js
 const app = require('./server');
@@ -129,5 +132,5 @@ Supertest es una herramienta poderosa y fácil de usar para realizar pruebas de 
 
 ## Recursos adicionales
 
-* [Documentación Oficial de Supertest](https://github.com/visionmedia/supertest)
-* [Jest - Documentación Oficial](https://jestjs.io/docs/getting-started)
+* <a href="https://github.com/visionmedia/supertest" target="_blank">Documentación Oficial de Supertest</a>
+* <a href="https://jestjs.io/docs/getting-started" target="_blank">Jest - Documentación Oficial</a>

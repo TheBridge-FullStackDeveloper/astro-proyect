@@ -1,4 +1,4 @@
-import { defineCollection } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
 import fs from 'fs';
 import path from 'path';
 
@@ -14,6 +14,22 @@ const collections = Object.fromEntries(
         name,
         defineCollection({
             type: 'content',
+            schema: z.object({
+                title: z.string(),
+                description: z.string(),
+                pubDate: z.coerce.date().transform((date) => {
+                    const timeZone = 'Europe/Madrid'; // Cambia a tu zona horaria
+                    const formattedDate = new Intl.DateTimeFormat('es-ES', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                        timeZone: timeZone,
+                    }).format(date);
+
+                    return formattedDate; // Esto devolverá DD/MM/YYYY
+                }),
+                collection: z.string()
+            })
         }),
     ])
 );

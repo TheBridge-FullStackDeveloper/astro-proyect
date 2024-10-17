@@ -1,11 +1,13 @@
 ---
 title: Jest
-
+description: "esta es la descripcion de Jest"
+pubDate: '01/03/2024'
+collection: nodejs
 ---
 
 ## ¿Qué es Jest?
 
-[Jest](https://jestjs.io/) es un framework de pruebas en JavaScript desarrollado por Facebook. Es ampliamente utilizado para probar aplicaciones escritas en **JavaScript** y **React**. Jest es ideal para realizar pruebas unitarias, pruebas de integración, y pruebas de instantáneas (snapshots).
+<a href="https://jestjs.io/" target="_blank">Jest</a> es un framework de pruebas en JavaScript desarrollado por Facebook. Es ampliamente utilizado para probar aplicaciones escritas en **JavaScript** y **React**. Jest es ideal para realizar pruebas unitarias, pruebas de integración, y pruebas de instantáneas (snapshots).
 
 ## Características Principales
 
@@ -166,5 +168,5 @@ Jest es una herramienta poderosa y versátil para realizar pruebas en proyectos 
 
 ## Recursos adicionales
 
-* [Documentación Oficial de Jest](https://jestjs.io/docs/getting-started)
-* [Guía de Mocking en Jest](https://jestjs.io/docs/mock-functions)
+* <a href="https://jestjs.io/docs/getting-started" target="_blank">Documentación Oficial de Jest</a>
+* <a href="https://jestjs.io/docs/mock-functions" target="_blank">Guía de Mocking en Jest</a>

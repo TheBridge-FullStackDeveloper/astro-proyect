@@ -1,5 +1,8 @@
 ---
 title: Formularios en HTML
+description: "esta es la descripcion a formularios en HTML"
+pubDate: '01/04/2024'
+collection: html
 ---
 
 Los formularios en HTML permiten a los usuarios enviar datos a un servidor. Están formados por una serie de controles como campos de texto, botones, casillas de verificación, entre otros.

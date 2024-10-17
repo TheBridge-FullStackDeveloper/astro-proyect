@@ -1,5 +1,8 @@
 ---
 title: Objetos y sus métodos
+description: "esta es la descripcion de objetos y sus metodos"
+pubDate: '01/03/2024'
+collection: javascript
 ---
 
 En JavaScript, un objeto es una estructura de datos que puede contener propiedades y métodos. Una propiedad es una asociación entre un nombre (una clave) y un valor, mientras que un método es una función asociada al objeto. Los objetos permiten organizar y manipular datos de manera estructurada y eficiente.
