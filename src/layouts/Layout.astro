@@ -1,11 +1,22 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import { Breadcrumbs } from "astro-breadcrumbs";
+import { getCollection } from 'astro:content';
 import "astro-breadcrumbs/breadcrumbs.scss"
 import "../styles/custom-breadcrumbs.scss"
 import CodeEditor from '../components/CodeEditor.astro'
 import Modal  from '../components/Modal.astro'
+import Navbar from '../components/Navbar.astro';
 import '../styles/global.css'
+
+const allPosts = [
+  ...(await getCollection('javascript')),
+  ...(await getCollection('html')),
+  ...(await getCollection('css')),
+  ...(await getCollection('bases_de_datos')),
+  ...(await getCollection('nodejs')),
+  ...(await getCollection('react')),
+];
 
 
 let currentPath = Astro.url.pathname;
@@ -36,22 +47,7 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<header>
-			<nav class="nav">
-				<a href="/astro-proyect/"><img src="/astro-proyect/images/logo_TB_horiz_negativo-01.png" alt="The_bridge" class="logo"></a>
-				<!--<form id="search-form">
-					<input type="text" id="search-input" placeholder="Buscar..." aria-label="Buscar" />
-					<button type="submit">Buscar</button>
-				</form> -->
-				<div id="search-results"></div>
-				<ul class="navList">
-					<li class="navItem"><a href="/astro-proyect/fundamentals/">Fundamentals</a></li>
-					<li class="navItem"><a href="/astro-proyect/backend/">BackEnd</a></li>
-					<li class="navItem"><a href="/astro-proyect/frontend/">FrontEnd</a></li>
-				</ul>
-				<button class="hamburger" aria-label="Toggle menu">
-					&#9776;
-				</button>
-			</nav>
+			<Navbar posts={allPosts}/>
 		</header>
 		<div class="back-breadcrumbs">
 			{isRoot ? "" : 
@@ -79,18 +75,5 @@ const { title } = Astro.props;
 		<Modal>
 			<CodeEditor/>
 	  	</Modal>
-
-		  <script>
-			document.addEventListener('DOMContentLoaded', function () {
-				const hamburger = document.querySelector('.hamburger');
-				const nav = document.querySelector('.nav');
-		
-				if (hamburger && nav) {  // Verificamos que ambos elementos existan
-					hamburger.addEventListener('click', function () {
-						nav.classList.toggle('active'); // Activa/desactiva la clase 'active'
-					});
-				}
-			});
-		</script>
 	</body>
 </html>

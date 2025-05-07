@@ -1,0 +1,121 @@
+---
+// Navbar.astro
+const { posts } = Astro.props;
+---
+
+<nav class="nav">
+  <a href="/astro-proyect/"><img src="/astro-proyect/images/logo_TB_horiz_negativo-01.png" alt="The_bridge" class="logo"></a>
+
+  <div class="search-container">
+    <input
+      type="text"
+      id="search-input"
+      placeholder="Buscar..."
+      aria-label="Buscar"
+      class="search-input"
+      style="padding: 0.5rem; border-radius: 0.25rem; border: 1px solid #ccc;"
+    />
+    <ul id="search-results" class="search-dropdown"></ul>
+  </div>
+
+  <ul class="navList">
+    <li class="navItem"><a href="/astro-proyect/fundamentals/">Fundamentals</a></li>
+    <li class="navItem"><a href="/astro-proyect/backend/">BackEnd</a></li>
+    <li class="navItem"><a href="/astro-proyect/frontend/">FrontEnd</a></li>
+  </ul>
+
+  <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+</nav>
+
+<script type="module">
+  let posts = [];
+  const sectionMap = {
+    html: 'fundamentals',
+    css: 'fundamentals',
+    javascript: 'fundamentals',
+    react: 'frontend',
+    nodejs: 'backend',
+    bases_de_datos: 'backend',
+  };
+  
+  async function loadSearchData() {
+    if (posts.length > 0) return; // Evita recargar si ya están
+    const res = await fetch('/astro-proyect/search-index.json');
+    const data = await res.json();
+
+    const sectionPosts = Object.entries(sectionMap).map(([category, section]) => ({
+      title: category,
+      description: `Ver todos los artículos de ${category}`,
+      url: `/astro-proyect/${section}/${category}/`
+    }));
+
+    const contentPosts = data.map(post => ({
+      title: post.title,
+      description: post.description,
+      url: `/astro-proyect/${post.slug}`
+    }));
+
+    posts = [...sectionPosts, ...contentPosts];
+  }
+  
+  function buscar(term) {
+    const input = term.toLowerCase();
+    const resultsBox = document.querySelector("#search-results");
+  
+    if (!input) {
+      resultsBox.innerHTML = '';
+      return;
+    }
+  
+    const results = posts.filter(post =>
+      post.title.toLowerCase().includes(input) ||
+      post.description.toLowerCase().includes(input)
+    );
+
+    if (results.length === 0) {
+      resultsBox.innerHTML = '<li style="padding: 0.75rem 1rem; color: white;">No se encontraron resultados</li>';
+      return;
+    }
+  
+    resultsBox.innerHTML = results.map(post => `
+      <li class="search-result-item">
+        <a href="${post.url}">
+          <strong>${post.title}</strong><br>
+          <span>${post.description}</span>
+        </a>
+      </li>
+    `).join('');
+  }
+  
+  function initSearch() {
+    const inputEl = document.querySelector("#search-input");
+    if (inputEl) {
+      inputEl.addEventListener("input", (e) => buscar(e.target.value));
+    }
+  
+    document.addEventListener("click", (e) => {
+      const container = document.querySelector(".search-container");
+      if (!container.contains(e.target)) {
+        document.querySelector("#search-results").innerHTML = "";
+      }
+    });
+  
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        document.querySelector("#search-results").innerHTML = "";
+        document.getElementById("search-input").value = "";
+      }
+    });
+  }
+  
+  // Inicializa en carga inicial
+  document.addEventListener("DOMContentLoaded", async () => {
+    await loadSearchData();
+    initSearch();
+
+    document.addEventListener('astro:after-swap', () => {
+      initSearch();
+    })
+  });
+</script>
+  
