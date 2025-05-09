@@ -4,18 +4,23 @@ const { posts } = Astro.props;
 ---
 
 <nav class="nav">
-  <a href="/astro-proyect/"><img src="/astro-proyect/images/logo_TB_horiz_negativo-01.png" alt="The_bridge" class="logo"></a>
+  <a href="/astro-proyect/" class="logo-link">
+    <img src="/astro-proyect/images/logo_TB_horiz_negativo-01.png" alt="The_bridge" class="logo">
+  </a>
 
-  <div class="search-container">
-    <input
-      type="text"
-      id="search-input"
-      placeholder="Buscar..."
-      aria-label="Buscar"
-      class="search-input"
-      style="padding: 0.5rem; border-radius: 0.25rem; border: 1px solid #ccc;"
-    />
-    <ul id="search-results" class="search-dropdown"></ul>
+  <div class="top-bar">
+    <div class="search-container">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Buscar..."
+        aria-label="Buscar"
+        class="search-input"
+        style="padding: 0.5rem; border-radius: 0.25rem; border: 1px solid #ccc;"
+      />
+      <ul id="search-results" class="search-dropdown"></ul>
+    </div>
+    <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
   </div>
 
   <ul class="navList">
@@ -24,7 +29,6 @@ const { posts } = Astro.props;
     <li class="navItem"><a href="/astro-proyect/frontend/">FrontEnd</a></li>
   </ul>
 
-  <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
 </nav>
 
 <script type="module">
@@ -51,7 +55,7 @@ const { posts } = Astro.props;
 
     const contentPosts = data.map(post => ({
       title: post.title,
-      description: post.description,
+      description: '',
       url: `/astro-proyect/${post.slug}`
     }));
 
@@ -68,8 +72,7 @@ const { posts } = Astro.props;
     }
   
     const results = posts.filter(post =>
-      post.title.toLowerCase().includes(input) ||
-      post.description.toLowerCase().includes(input)
+      post.title.toLowerCase().includes(input)
     );
 
     if (results.length === 0) {
@@ -81,6 +84,7 @@ const { posts } = Astro.props;
       <li class="search-result-item">
         <a href="${post.url}">
           <strong>${post.title}</strong><br>
+          <span>${post.description}</span>
         </a>
       </li>
     `).join('');
@@ -115,6 +119,15 @@ const { posts } = Astro.props;
     document.addEventListener('astro:after-swap', () => {
       initSearch();
     })
+  });
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.querySelector(".nav");
+    const hamburger = document.querySelector(".hamburger");
+
+    hamburger.addEventListener("click", function () {
+      nav.classList.toggle("active");
+    });
   });
 </script>
   
