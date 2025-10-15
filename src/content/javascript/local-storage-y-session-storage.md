@@ -1,6 +1,6 @@
 ---
 title: 'Almacenamiento Web: Local Storage y Session Storage'
-description: "esta es la descripcion de local storage y session storage"
+description: ""
 pubDate: '01/03/2024'
 collection: javascript
 ---

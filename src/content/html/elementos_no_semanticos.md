@@ -1,6 +1,6 @@
 ---
 title: Elementos no semánticos en HTML
-description: "esta es la descripcion a elementos no semánticos en HTML"
+description: ""
 pubDate: '01/03/2024'
 collection: html
 ---

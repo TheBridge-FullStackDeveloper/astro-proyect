@@ -1,6 +1,6 @@
 ---
 title: addEventListener
-description: "esta es la descripcion de addeventlistener"
+description: ""
 pubDate: '01/03/2024'
 collection: javascript
 ---

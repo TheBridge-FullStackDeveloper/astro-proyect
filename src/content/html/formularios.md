@@ -1,6 +1,6 @@
 ---
 title: Formularios en HTML
-description: "esta es la descripcion a formularios en HTML"
+description: ""
 pubDate: '01/04/2024'
 collection: html
 ---

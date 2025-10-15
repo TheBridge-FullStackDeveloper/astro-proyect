@@ -1,6 +1,6 @@
 ---
 title: MongoDB
-description: "esta es la descripcion de MongoDB"
+description: ""
 pubDate: '01/03/2024'
 collection: nodejs
 ---

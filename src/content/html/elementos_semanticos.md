@@ -1,6 +1,6 @@
 ---
 title: Elementos semánticos en HTML
-description: "esta es la descripcion a elementos semánticos en HTML"
+description: ""
 pubDate: '01/02/2024'
 collection: html
 ---

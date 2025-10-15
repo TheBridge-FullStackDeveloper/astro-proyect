@@ -1,13 +1,13 @@
 ---
 title: Introducción a HTML
-description: "esta es la descripcion a HTML"
+description: ""
 pubDate: '01/01/2024'
 collection: html
 ---
 
 HTML (HyperText Markup Language) es el lenguaje estándar para crear sitios web. Proporciona la estructura básica del contenido que se muestra en el navegador, permitiendo definir textos, imágenes, enlaces, tablas, formularios, entre otros elementos visuales.
 
-## Estructura básica de un documento HTML
+### Estructura básica de un documento HTML
 
 Un archivo HTML tiene una estructura básica que sigue el siguiente formato:
 
@@ -36,16 +36,16 @@ Un archivo HTML tiene una estructura básica que sigue el siguiente formato:
 5. `<title>`: Define el título que aparecerá en la pestaña del navegador.
 6. `<body>`: Contiene todo el contenido visible de la página, como texto, imágenes y otros elementos.
 
-## Etiquetas comunes en HTML
+### Etiquetas comunes en HTML
 
-### 1. Encabezados
+## 1. Encabezados
 Los encabezados se utilizan para definir títulos en la página y van desde **`<h1>`** (el más importante) hasta **`<h6>`** (el menos importante).
 ```html
 <h1>Este es un encabezado de nivel 1</h1>
 <h2>Este es un encabezado de nivel 2</h2>
 ```
 
-### 2. Párrafos
+## 2. Párrafos
 La etiqueta **`<p>`** se usa para crear párrafos de texto.
 ```html
 
@@ -53,7 +53,7 @@ La etiqueta **`<p>`** se usa para crear párrafos de texto.
 
 ```
 
-### 3. Enlaces
+## 3. Enlaces
 Para agregar un enlace a otra página, utilizamos la etiqueta **`<a>`** con el atributo *href*:
 
 ```html
@@ -62,7 +62,7 @@ Para agregar un enlace a otra página, utilizamos la etiqueta **`<a>`** con el a
 
 ```
 
-### 4. Imágenes
+## 4. Imágenes
 Para insertar una imagen, usamos la etiqueta **`<img>`** con el atributo *src* (fuente) y opcionalmente *alt* (texto alternativo):
 ```html
 
@@ -70,26 +70,28 @@ Para insertar una imagen, usamos la etiqueta **`<img>`** con el atributo *src* (
 
 ```
 
-### 5. Listas
+## 5. Listas
 Existen dos tipos principales de listas en HTML: ordenadas y desordenadas.
 
 - **Lista desordenada**:
-```html
-<ul>
-  <li>Elemento 1</li>
-  <li>Elemento 2</li>
-</ul>
-```
+
+  ```html
+  <ul>
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+  </ul>
+  ```
 
 - **Lista ordenada**:
-```html
-<ol>
-  <li>Primer elemento</li>
-  <li>Segundo elemento</li>
-</ol>
-```
 
-## Comentarios en HTML
+  ```html
+  <ol>
+    <li>Primer elemento</li>
+    <li>Segundo elemento</li>
+  </ol>
+  ```
+
+### Comentarios en HTML
 Para agregar un comentario que no será visible en el navegador, utilizamos la siguiente sintaxis:
 ```html
 

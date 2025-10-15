@@ -1,6 +1,6 @@
 ---
 title: Métodos de número
-description: "esta es la descripcion de métodos de número"
+description: ""
 pubDate: '01/03/2024'
 collection: javascript
 ---

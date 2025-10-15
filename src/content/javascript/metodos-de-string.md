@@ -1,6 +1,6 @@
 ---
 title: Métodos de string
-description: "esta es la descripcion de metodos de string"
+description: ""
 pubDate: '01/03/2024'
 collection: javascript
 ---

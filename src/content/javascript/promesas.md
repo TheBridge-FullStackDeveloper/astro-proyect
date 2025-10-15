@@ -1,6 +1,6 @@
 ---
 title: Promesas en Javascript
-description: "esta es la descripcion de promesas"
+description: ""
 pubDate: '01/03/2024'
 collection: javascript
 ---

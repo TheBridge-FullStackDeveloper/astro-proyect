@@ -1,6 +1,6 @@
 ---
 title: Mongoose
-description: "esta es la descripcion de mongoose"
+description: ""
 pubDate: '01/03/2024'
 collection: nodejs
 ---

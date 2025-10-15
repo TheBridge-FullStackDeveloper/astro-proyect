@@ -1,6 +1,6 @@
 ---
 title: Objetos y sus métodos
-description: "esta es la descripcion de objetos y sus metodos"
+description: ""
 pubDate: '01/03/2024'
 collection: javascript
 ---

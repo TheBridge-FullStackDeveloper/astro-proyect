@@ -1,6 +1,6 @@
 ---
 title: Tablas en HTML
-description: "esta es la descripcion a tablas en HTML"
+description: ""
 pubDate: '01/12/2024'
 collection: html
 ---
