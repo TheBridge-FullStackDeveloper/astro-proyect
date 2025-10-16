@@ -1,7 +1,7 @@
 ---
 title: Métodos de número
 description: ""
-pubDate: '01/03/2024'
+pubDate: '01/02/2024'
 collection: javascript
 ---
 

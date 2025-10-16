@@ -1,7 +1,7 @@
 ---
 title: Promesas en Javascript
 description: ""
-pubDate: '01/03/2024'
+pubDate: '01/12/2024'
 collection: javascript
 ---
 

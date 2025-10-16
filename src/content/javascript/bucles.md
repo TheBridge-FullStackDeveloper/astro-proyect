@@ -1,7 +1,7 @@
 ---
 title: Bucles
 description: ""
-pubDate: '01/03/2024'
+pubDate: '01/05/2024'
 collection: javascript
 ---
 

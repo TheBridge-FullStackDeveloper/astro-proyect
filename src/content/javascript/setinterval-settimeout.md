@@ -1,7 +1,7 @@
 ---
 title: setInterval y setTimeOut
 description: ""
-pubDate: '01/03/2024'
+pubDate: '01/14/2024'
 collection: javascript
 ---
 

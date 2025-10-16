@@ -1,7 +1,7 @@
 ---
 title: Objetos y sus métodos
 description: ""
-pubDate: '01/03/2024'
+pubDate: '01/08/2024'
 collection: javascript
 ---
 

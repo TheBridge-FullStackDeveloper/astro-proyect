@@ -1,7 +1,7 @@
 ---
 title: Destructuring y Spread Operator
 description: ""
-pubDate: '01/03/2024'
+pubDate: '01/11/2024'
 collection: javascript
 ---
 
