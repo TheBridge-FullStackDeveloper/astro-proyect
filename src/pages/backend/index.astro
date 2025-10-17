@@ -1,24 +1,35 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
+import ComingSoon from "../../components/ComingSoon.astro";
+
+const today = new Date();
+const releaseBackend = new Date('2025-12-14');
+
 let currentPath = Astro.url.pathname;
 ---
 
-<Layout title="The Bridge">
-	<div class="pageTitle">
-		<h1>Backend</h1>
-		<img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo">
-	</div>
-	<ul role="list" class="link-card-grid">
-		<Card
-			href=`${currentPath}bases_de_datos/`
-			title="Bases de Datos"
-			description="Aquí encontrarás información sobre bases de datos, incluyendo SQL y NoSQL."
-		/>
-		<Card
-			href=`${currentPath}nodejs/`
-			title="NodeJS"
-			description="Node.js es un entorno de ejecución de JavaScript del lado del servidor que permite a los desarrolladores crear aplicaciones web escalables y de alto rendimiento. Dentro de esta sección encontrarás información sobre Express, APIs RESTful, testing y más."
-		/>
-	</ul>
-</Layout>
+{ today < releaseBackend ? (
+	<Layout title="The Bridge">
+		<ComingSoon section="Backend" date={releaseBackend} />
+	</Layout>
+) : (
+	<Layout title="The Bridge">
+		<div class="pageTitle">
+			<h1>Backend</h1>
+			<img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo">
+		</div>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href=`${currentPath}bases_de_datos/`
+				title="Bases de Datos"
+				description="Aquí encontrarás información sobre bases de datos, incluyendo SQL y NoSQL."
+			/>
+			<Card
+				href=`${currentPath}nodejs/`
+				title="NodeJS"
+				description="Node.js es un entorno de ejecución de JavaScript del lado del servidor que permite a los desarrolladores crear aplicaciones web escalables y de alto rendimiento."
+			/>
+		</ul>
+	</Layout>
+)}

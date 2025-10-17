@@ -2,20 +2,30 @@
 import Layout from './Layout.astro';
 
 type Props = {
-    title: string;    
+    title: string;
+    hideBreadcrumbs?: boolean;
+    isPlaceholder?: boolean;
 };
 
-const { title } = Astro.props as Props;
+const { title, hideBreadcrumbs = false, isPlaceholder = false } = Astro.props as Props;
 
 ---
-<Layout title="The Bridge">
-        <article>
-            <div class="prose">
-                <div class="title pageTitle">
-                    <h1>{title}</h1>
-                    <img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo">
-                </div>
-                <slot /> <!-- Slot para contenido dinámico -->
-            </div>
-        </article>
+<Layout title="The Bridge" hideBreadcrumbs={hideBreadcrumbs}>
+    <article>
+
+        <div class="prose">
+            {isPlaceholder ? (
+                <section style="text-align:center; padding:4rem;">
+          <h1 class="text-5xl font-bold text-red-500">{title}</h1>
+          <slot />
+        </section>
+      ) : (
+          <div class="title pageTitle">
+          <h1>{title}</h1>
+          <img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo">
+        </div>
+      )}
+    </div>
+    {!isPlaceholder && <slot />}
+    </article>
 </Layout>

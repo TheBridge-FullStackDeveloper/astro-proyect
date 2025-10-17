@@ -1,5 +1,5 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
+import ProtectedLayout from "../../../layouts/ProtectedLayout.astro";
 import Card from "../../../components/Card.astro";
 import { getCollection } from "astro:content";
 
@@ -8,7 +8,7 @@ const posts = (await getCollection('bases_de_datos')).sort(
 );
 ---
 
-<Layout title="The Bridge">
+<ProtectedLayout section="backend">
     <section>
         <div class="pageTitle">
             <h1>Bases de datos</h1>
@@ -26,4 +26,4 @@ const posts = (await getCollection('bases_de_datos')).sort(
             }
         </ul>
     </section>
-</Layout>
+</ProtectedLayout>

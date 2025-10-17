@@ -1,19 +1,36 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../../layouts/BlogPost.astro';
+import { getCollection } from "astro:content";
+import BlogPost from "../../../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('react');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
-	}));
+  const posts = await getCollection("react");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
 }
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+const today = new Date();
+const releaseFrontend = new Date("2026-02-22");
+const available = today >= releaseFrontend;
+const title = "Sección no disponible todavía";
+const message = `La sección Frontend estará disponible el ${releaseFrontend.toLocaleDateString("es-ES")}.`;
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost>
+{available ? (
+  <BlogPost {...post.data}>
+    <Content />
+  </BlogPost>
+) : (
+  <BlogPost	 title={title} hideBreadcrumbs={true} isPlaceholder={true}>
+    <section style="text-align:center; padding:4rem;">
+      <p>{message}</p>
+      <a href="/astro-proyect/">
+        Volver al inicio
+      </a>
+    </section>
+  </BlogPost>
+)}

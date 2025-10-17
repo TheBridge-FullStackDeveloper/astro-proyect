@@ -1,19 +1,31 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
+import ComingSoon from "../../components/ComingSoon.astro";
+
+const today = new Date();
+const releaseFrontend = new Date('2026-02-22');
+
 let currentPath = Astro.url.pathname;
 ---
 
-<Layout title="The Bridge">
-	<div class="pageTitle">
-		<h1>Frontend</h1>
-		<img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo">
-	</div>
-	<ul role="list" class="link-card-grid">
-		<Card
-			href=`${currentPath}react/`
-			title="React"
-			description="React es una biblioteca de JavaScript para construir interfaces de usuario. Dentro de esta sección encontrarás información sobre componentes, hooks, estado y más."
-		/>
-	</ul>
-</Layout>
+{ today < releaseFrontend ? (
+	<Layout title="The Bridge">
+		<ComingSoon section="Frontend" date={releaseFrontend} />
+	</Layout>
+) : (
+	<Layout title="The Bridge">
+			<div class="pageTitle">
+				<h1>Frontend</h1>
+				<img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo">
+			</div>
+			<ul role="list" class="link-card-grid">
+				<Card
+					href=`${currentPath}react/`
+					title="React"
+					description="React es una biblioteca de JavaScript para construir interfaces de usuario. Dentro de esta sección encontrarás información sobre componentes, hooks, estado y más."
+				/>
+			</ul>
+		</Layout>	
+)}
+

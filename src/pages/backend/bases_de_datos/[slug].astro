@@ -12,8 +12,27 @@ export async function getStaticPaths() {
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+const today = new Date();
+const releaseBackend = new Date('2025-12-14');
+const available = today >= releaseBackend;
+const title = 'Sección no disponible todavía';
+const message = `La sección Backend estará disponible el ${releaseBackend.toLocaleDateString('es-ES')}.`;
 ---
 
-<BlogPost {...post.data}>
-	<Content />
-</BlogPost>
+{available ? (
+	<BlogPost {...post.data}>
+		<Content />
+	</BlogPost>
+) : (
+	<BlogPost title={title} hideBreadcrumbs={true} isPlaceholder={true}>
+		<section style="text-align:center; padding:4rem;">
+			<p>{message}</p>
+			<a href="/astro-proyect/">
+				Volver al inicio
+			</a>
+		</section>
+	</BlogPost>
+)}
+
+

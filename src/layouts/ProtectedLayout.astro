@@ -1,0 +1,32 @@
+---
+import Layout from "./Layout.astro";
+
+const { section } = Astro.props;
+
+const today = new Date();
+const releaseBackEnd = new Date('2025-12-14');
+const releaseFrontEnd = new Date('2026-02-22');
+
+let available = true;
+if (section === 'backend' && today < releaseBackEnd) available = false;
+if (section === 'frontend' && today < releaseFrontEnd) available = false;
+---
+
+{ available ? (
+    <Layout title="The Bridge">
+        <slot />
+    </Layout>
+) : (
+    <Layout title="The Bridge">
+        <section style="text-align:center; padding:4rem;">
+            <h1>Sección no disponible todavía</h1>
+            <p>
+                La sección <strong>{section}</strong> estará dispomnible el {" "}
+                {section === 'backend'
+                    ? releaseBackEnd.toLocaleDateString("es-ES")
+                    : releaseFrontEnd.toLocaleDateString("es-ES")}
+            </p>
+            <a href="/astro-proyect/">Volver al inicio</a>
+        </section>
+    </Layout>
+)}

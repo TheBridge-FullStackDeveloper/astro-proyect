@@ -1,0 +1,9 @@
+---
+const { section, date } = Astro.props;
+---
+
+<section style="text-align:center; padding:4rem;">
+    <h1>Sección no disponible todavía</h1>
+    <p>La sección <strong>{section}</strong> estará disponible el {date.toLocaleDateString("es-ES")}.</p>
+    <a href="/astro-proyect/">Volver al inicio</a>
+</section>

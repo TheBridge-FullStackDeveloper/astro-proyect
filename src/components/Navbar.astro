@@ -47,11 +47,24 @@ const { posts } = Astro.props;
     const res = await fetch('/astro-proyect/search-index.json');
     const data = await res.json();
 
-    const sectionPosts = Object.entries(sectionMap).map(([category, section]) => ({
-      title: category,
-      description: `Ver todos los artículos de ${category}`,
-      url: `/astro-proyect/${section}/${category}/`
-    }));
+    const today = new Date();
+    const releaseBackEnd = new Date('2025-12-14');
+    const releaseFrontEnd = new Date('2026-02-22');
+
+    const showBackend = today >= releaseBackEnd;
+    const showFrontend = today >= releaseFrontEnd;
+
+    const sectionPosts = Object.entries(sectionMap)
+      .filter(([category, section]) => {
+        if (section === 'backend' && !showBackend) return false;
+        if (section === 'frontend' && !showFrontend) return false;
+        return true;
+      })
+      .map(([category, section]) => ({
+        title: category,
+        description: `Ver todos los artículos de ${category}`,
+        url: `/astro-proyect/${section}/${category}/`
+      }));
 
     const contentPosts = data.map(post => ({
       title: post.title,
