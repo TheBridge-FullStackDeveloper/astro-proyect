@@ -7,6 +7,14 @@ let currentPath = Astro.url.pathname;
 if (currentPath !== '/' && currentPath.endsWith('/')) {
     currentPath = currentPath.slice(0, -1);
 }
+
+const today = new Date();
+const releaseBackEnd = new Date('2025-12-14');
+const releaseFrontEnd = new Date('2026-02-22');
+
+const showBackend = today >= releaseBackEnd;
+const showFrontend = today >= releaseFrontEnd;
+
 ---
 
 <Layout title="The Bridge">
@@ -24,16 +32,20 @@ if (currentPath !== '/' && currentPath.endsWith('/')) {
 					title="Fundamentals"
 					description="En esta sección encontrarás información sobre los fundamentos de la programación, incluyendo HTML, CSS y JavaScript."
 				/>
+				{showBackend && (
 				<Card
 					href=`${currentPath}/backend/`
 					title="Backend"
 					description="En esta sección encontrarás información sobre el desarrollo backend, incluyendo Node.js, bases de datos y más."
 				/>
+				)}
+				{showFrontend && (
 				<Card
 					href=`${currentPath}/frontend/`
 					title="Frontend"
 					description="En esta sección encontrarás información sobre el desarrollo frontend en React."
 				/>
+				)}
 
 			</ul>
 	</section>
