@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/public/images/logo_readme.png" width="120" alt="The Bridge Logo" />
+  <img src="/public/images/logo_readme.png" alt="The Bridge Logo" />
 </p>
 
 # Proyecto Complementario Full Stack Developer (MERN)
@@ -9,7 +9,6 @@ Este espacio ha sido creado como un **recurso adicional** para acompañar vuestr
 
 Aquí encontraréis contenidos de **frontend**, **backend** y **fullstack**, así como material ampliado, ejemplos prácticos y documentación adicional que os ayudarán a afianzar los conceptos vistos en clase.
 
----
 
 ## Objetivo del proyecto
 
@@ -18,7 +17,6 @@ Los contenidos se irán desbloqueando progresivamente conforme avancemos en el t
 
 Además, algunos apartados incluirán explicaciones extendidas, ejemplos reales y buenas prácticas utilizadas en entornos profesionales, tanto en frontend como en backend.
 
----
 
 ## Estructura del contenido
 
@@ -28,7 +26,6 @@ El sitio está organizado por áreas temáticas:
 - **Backend:** Node.js, Express, creación de APIs REST, autenticación y conexión con MongoDB.  
 - **Frontend:** React, Hooks, Routing y gestión de estado.
 
----
 
 ## Acceso al contenido
 
@@ -37,7 +34,6 @@ Esto se hace para mantener el ritmo del curso y asegurar que cada bloque se estu
 
 Cuando llegue el momento, las secciones bloqueadas se activarán automáticamente y estarán disponibles en la web.
 
----
 
 ## Tecnologías utilizadas
 
@@ -47,7 +43,6 @@ Cuando llegue el momento, las secciones bloqueadas se activarán automáticament
 - **JavaScript** para la lógica dinámica.  
 - **GitHub Pages** como entorno de despliegue.
 
----
 
 ## Cómo ver el proyecto
 
@@ -66,7 +61,6 @@ npm run dev
 
 El sitio estará disponible en: http://localhost:4321
 
----
 
 ## Notas finales
 
