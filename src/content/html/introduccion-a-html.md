@@ -104,3 +104,4 @@ Para agregar un comentario que no será visible en el navegador, utilizamos la s
 HTML es el lenguaje básico para estructurar contenido en la web. A lo largo de este archivo vimos una introducción a su estructura general y las etiquetas más comunes que permiten crear contenido simple pero efectivo. A partir de aquí podemos profundizar en temas como formularios, tablas, y elementos semánticos.
 
 
+

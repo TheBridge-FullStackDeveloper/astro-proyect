@@ -6,6 +6,7 @@ import { getCollection } from "astro:content";
 const posts = (await getCollection('html')).sort(
     (a, b) => a.data.pubDate.localeCompare(b.data.pubDate)
 );
+
 ---
 
 <Layout title="The Bridge">
