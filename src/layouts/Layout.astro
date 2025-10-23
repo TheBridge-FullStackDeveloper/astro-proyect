@@ -51,7 +51,7 @@ const { title, hideBreadcrumbs = false } = Astro.props;
 			<Navbar posts={allPosts}/>
 		</header>
 		<div class="back-breadcrumbs">
-			{isRoot && hideBreadcrumbs ? ( 
+			{!isRoot && !hideBreadcrumbs ? ( 
 				<Breadcrumbs linkTextFormat="capitalized" separatorAriaHidden={false}>
 					<svg
 						slot="separator"
