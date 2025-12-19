@@ -40,9 +40,8 @@
 
                 const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
-                // Limpiar el contenido del iframe
-                iframeDoc.open();
-                iframeDoc.close();
+                // Limpiar iframe SIN open/close
+                iframeDoc.body.innerHTML = '';
 
 
                 // Crear un contenedor para los logs
@@ -50,34 +49,35 @@
                 logContainer.classList.add('logContainer');
                 iframeDoc.body.appendChild(logContainer);
 
-                // Sobrescribir console.log y console.error en el contexto del iframe
-                iframe.contentWindow.console.log = function(...args) {
-                    const logMessage = iframeDoc.createElement('div');
-                    logMessage.textContent = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg).join(' ');
-                    logContainer.appendChild(logMessage);
-                };
-
-                iframe.contentWindow.console.error = function(...args) {
-                    const errorMessage = iframeDoc.createElement('div');
-                    errorMessage.style.color = 'red'; // Estilo para errores
-                    errorMessage.textContent = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : arg).join(' ');
-                    logContainer.appendChild(errorMessage);
-                };
-
-
-                // Siempre crear y ejecutar un script para ejecutar el código dentro del iframe
+                // Script con consola aislada
                 const script = iframeDoc.createElement('script');
                 script.textContent = `
-                    (function() {
-                        try {
-                            ${code}
-                        } catch (error) {
-                            console.error('Error:', error.message);
+                    (function () {
+                    const console = {
+                        log: (...args) => {
+                        const div = document.createElement('div');
+                        div.textContent = args.map(a =>
+                            typeof a === 'object' ? JSON.stringify(a) : a
+                        ).join(' ');
+                        document.querySelector('.logContainer').appendChild(div);
+                        },
+                        error: (...args) => {
+                        const div = document.createElement('div');
+                        div.style.color = 'red';
+                        div.textContent = args.join(' ');
+                        document.querySelector('.logContainer').appendChild(div);
                         }
+                    };
+
+                    try {
+                        ${code}
+                    } catch (error) {
+                        console.error('Error:', error.message);
+                    }
                     })();
                 `;
                 iframeDoc.body.appendChild(script);
-            }
+                }
 
             function restoreCode() {
                 const codeBlock = document.getElementById('codeBlock');
