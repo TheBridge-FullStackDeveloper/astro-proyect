@@ -5,8 +5,6 @@ pubDate: '02/03/2025'
 collection: nodejs
 ---
 
-# Express
-
 **Express** es un framework minimalista para Node.js que permite crear servidores web y APIs de forma sencilla y flexible.
 
 Es la base de la mayoría de proyectos backend en JavaScript.

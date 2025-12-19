@@ -1,7 +1,7 @@
 ---
 title: Jest
 description: ""
-pubDate: '01/03/2024'
+pubDate: '07/03/2024'
 collection: nodejs
 ---
 

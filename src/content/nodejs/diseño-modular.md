@@ -5,8 +5,6 @@ pubDate: '01/03/2025'
 collection: nodejs
 ---
 
-# Diseño modular en Node.js
-
 El **diseño modular** es una forma de estructurar aplicaciones dividiéndolas en partes pequeñas, independientes y reutilizables. Cada módulo tiene una **responsabilidad clara**, lo que facilita el mantenimiento, las pruebas y la escalabilidad del proyecto.
 
 En aplicaciones backend con Node.js y Express, el diseño modular es fundamental para evitar archivos gigantes y código difícil de entender.
