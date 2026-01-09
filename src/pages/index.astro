@@ -21,7 +21,7 @@ const showFrontend = today >= releaseFrontEnd;
 	<section>
 		<div class="pageTitle">
 			<h1>FullStack Developer</h1> 
-			<img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo">
+			<img src="/astro-proyect/images/filled_icon.svg" alt="logo_programacion" class="logo_codigo" />
 		</div>
 		<p>Un FullStack Developer es un desarrollador que posee habilidades tanto en el frontend como en el backend de una aplicación o sitio web. 
 			Esto significa que es capaz de construir aplicaciones completas, abarcando desde la interfaz de usuario hasta la lógica del servidor y 
@@ -36,7 +36,7 @@ const showFrontend = today >= releaseFrontEnd;
 				<Card
 					href=`${currentPath}/backend/`
 					title="Backend"
-					description="En esta sección encontrarás información sobre el desarrollo backend, incluyendo Node.js, bases de datos y más."
+					description="En esta sección encontrarás información sobre el desarrollo backend, incluyendo Node.js y bases de datos."
 				/>
 				)}
 				{showFrontend && (
@@ -46,7 +46,6 @@ const showFrontend = today >= releaseFrontEnd;
 					description="En esta sección encontrarás información sobre el desarrollo frontend en React."
 				/>
 				)}
-
 			</ul>
 	</section>
 </Layout>

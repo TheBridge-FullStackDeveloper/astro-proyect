@@ -66,7 +66,7 @@ Para agregar un enlace a otra página, utilizamos la etiqueta **`<a>`** con el a
 Para insertar una imagen, usamos la etiqueta **`<img>`** con el atributo *src* (fuente) y opcionalmente *alt* (texto alternativo):
 ```html
 
-<img src="imagen.jpg" alt="Descripción de la imagen">
+<img src="imagen.jpg" alt="Descripción de la imagen" />
 
 ```
 

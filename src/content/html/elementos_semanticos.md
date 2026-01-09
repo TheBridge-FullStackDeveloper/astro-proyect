@@ -149,7 +149,7 @@ Mejoran la accesibilidad, la estructura lógica del documento y el posicionamien
     </aside>
 
     <figure>
-        <img src="foto.jpg" alt="Descripción de la foto">
+        <img src="foto.jpg" alt="Descripción de la foto" />
         <figcaption>Una imagen con su descripción.</figcaption>
     </figure>
 
